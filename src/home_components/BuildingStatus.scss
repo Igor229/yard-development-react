@@ -1,0 +1,155 @@
+@use '../variables';
+
+.status {
+  margin-top: 60px;
+
+  &__types {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+  }
+
+  &__button {
+    border-radius: 20px;
+    height: 40px;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    background-color: #fff;
+    border: 1px solid variables.$green10;
+    color: variables.$green10;
+    cursor: pointer;
+    transition: all .1s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: variables.$green10;
+      color: #fff;
+    }
+
+    &--active {
+      border-radius: 20px;
+      height: 40px;
+      padding: 10px 16px;
+      text-transform: uppercase;
+      border: none;
+      background-color: variables.$green20;
+      color: #fff;
+      cursor: pointer;
+      transition: all .1s;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: variables.$green10;
+      }
+    }
+  }
+
+  &__que {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+
+    &-text {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: variables.$gray10;
+    }
+
+    &-num {
+      border-radius: 50%;
+      padding: 10px 16px;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      border: 1px solid variables.$green10;
+      color: variables.$green10;
+      cursor: pointer;
+      transition: all .1s;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: variables.$green10;
+        color: #fff;
+      }
+
+      &--active {
+        border-radius: 50%;
+        padding: 10px 16px;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: variables.$green20;
+        color: #fff;
+        transition: all .1s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+          background-color: variables.$green10;
+        }
+      }
+    }
+  }
+
+  &__west--hidden {
+    display: none;
+  }
+  &__beskid--hidden {
+    display: none;
+  }
+}
+
+// ==================== SLYDER STYLES =====================
+.slider-hidden {
+  display: none;
+}
+.statusCard {
+  margin-top: 32px;
+
+  &__img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    align-items: start;
+    text-align: left;
+
+    &-date {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: variables.$gray10;
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 28px;
+      color: variables.$green20;
+    }
+
+    &-text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: variables.$gray10;
+    }
+  }
+}

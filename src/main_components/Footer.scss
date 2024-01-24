@@ -1,0 +1,83 @@
+@use '../variables';
+.footer {
+  background-color: variables.$green30;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 0;
+    &:first-child {
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-title {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    &-link {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      width: max-content;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: #fff;
+        transition: width .3s ;
+      }
+      &:hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 24px;
+
+    &-link {
+      transition: all .1s;
+
+      :hover {
+        transform: translateY(-5px) scale(1.2);
+        transition: all .1s;
+      } 
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer__card-link {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    &__logo {
+      width: 108px;
+      height: 64px;
+    }
+
+    &__content {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__card {
+      gap: 6px;
+    }
+  }
+}

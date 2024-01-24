@@ -1,0 +1,269 @@
+@use '../variables';
+.burger {
+  display: none;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 0 80px;
+  transition: all .3s;
+
+  &--active {
+    background-color: variables.$green30;
+    transform: all .3s;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 32px;
+
+    &-item {
+      & a {
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: white;
+        transition: width .3s;
+      }
+      &:hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    &-button {
+      height: 64px;
+      width: 233px;
+      transition: all .1s;
+      font-size: 14px;
+      line-height: 20px;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: variables.$green10;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__phoneNumber {
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background-color: white;
+      transition: width .3s;
+    }
+    &:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .header {
+    padding: 0 56px;
+
+    &__logo {
+      width: 88px;
+      height: 48px;
+    }
+
+    &__nav {
+      gap: 18px;
+
+      &-item a {
+        font-size: 12px;
+      }
+    }
+
+    &__actions {
+      gap: 22px;
+
+      &-button {
+        width: 233px;
+        height: 48px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .header {
+    padding: 0 40px;
+
+    &__nav-item a {
+      font-size: 10px;
+    }
+
+    &__logo {
+      width: 80px;
+    }
+
+    &__actions {
+      font-size: 10px;
+      &-button {
+        width: 150px;
+      }
+    }
+  }
+}
+
+// ======================= B U R G E R    M E N U =======================
+
+@media screen and (max-width: 875px) {
+  .header__items {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    
+    &__container {
+        margin: 0 55px;
+    }
+
+    &__menu {
+        padding-top: 35px;
+        padding-bottom: 200px;
+        background-color: #161B18;
+        position: fixed;
+        transition: transform 0.2s;
+        transform: translateX(-100%);
+        left: 0;
+        right: 0;
+        z-index: 99;
+        overflow: scroll;
+
+
+        &-title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #fff;
+        }
+
+        &-actions {
+            padding-top: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        &-contacts {
+            padding-top: 65px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .showMenu {
+      transform: translateX(0);
+    }
+  }
+
+  .burger-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 20px;
+    color: variables.$gray00;
+    border: 1px solid variables.$gray00;
+    border-radius: 8px;
+  }
+  .burger-button {
+    width: 100%;
+    height: 48px;
+    transition: all .1s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: variables.$green10;
+    }
+  }
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contacts__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .burger__socials {
+    display: flex;
+    gap: 24px;
+  }
+
+  // ========== H E A D E R   A N A L O G ==========
+  .burger__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+
+    .humburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-icon {
+        position: fixed;
+        left: 0;
+        padding-left: 55px;
+        cursor: pointer;
+    }
+
+    .closeIcon {
+        display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header {
+    padding: 0 16px;
+  }
+  .burger__menu {
+    &-actions {
+      flex-direction: column;
+    }
+
+    &-contacts {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  .burger__items-icon {
+    padding-left: 16px;
+  }
+}
